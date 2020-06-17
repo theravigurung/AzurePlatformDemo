@@ -19,7 +19,9 @@ name = "my-test-candidate-{var.location}"
 
 Question 2:
 
-#ResourceGroup
+# Mentioned Infrastructure is designed in one region as if required config. is same then we can use template code
+# ResourceGroup
+
 resource "azurerm_resource_group" "example" {
     name     = "myResourceGroup"
     location = "eastus"
@@ -29,8 +31,7 @@ resource "azurerm_resource_group" "example" {
     }
 }
 
-#VNet
-
+# VNet
 
 resource "azurerm_virtual_network" "EHNetwork" 
 {
@@ -44,7 +45,7 @@ tags={
 	}
 }
  
-#Subnet
+# Subnet
 
 resource "azurerm_subnet" "EHsubnet" {
   subnet {
@@ -59,7 +60,7 @@ resource "azurerm_subnet" "EHsubnet" {
 
 }
 
-#NSG
+# NSG
 
 resource "azurerm_network_security_group"  "EHNsg"
 {
@@ -82,7 +83,7 @@ resource "azurerm_network_security_group"  "EHNsg"
         region=Los Angeles
 	}
 
-#VM:
+# VM:
 
 resource "my_private_key" "example_ssh" {
   	algorithm = "RSA"
